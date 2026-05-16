@@ -1,3 +1,5 @@
+<!-- v2 — Added explicit filename citation requirement and blocker 
+table format to improve CEO output structure. -->
 # Agent: CEO — NovaMesh
 
 ## Role

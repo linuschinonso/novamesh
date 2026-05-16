@@ -1,9 +1,23 @@
-# Marketing Strategy Memo — Cycle 2026-05-14
+# Marketing Strategy Memo — Cycle 2026-05-14 (mid-sprint update 2026-05-16)
 
 **From:** Marketing agent
 **To:** CEO, Dev, Finance, Legal
-**Date:** 2026-05-14
+**Date:** 2026-05-14 (original), 2026-05-16 (mid-sprint update)
 **Re:** Go-to-market posture for pre-revenue MVP cycle
+
+---
+
+## Mid-sprint update — 2026-05-16
+
+Two days into the cycle. No outbound has shipped yet — still gated on Legal's NDPR sign-off (deadline 2026-05-21, see `legal_risk.md`). Rather than wait idle, this update adds three execution-layer pieces (discovery call script, objection-handling playbook, segment-tailored email variants) so that the moment Legal clears the data clause, the founder can move from "send the email" to "run the campaign" without further drafting.
+
+**Status vs. DoD:**
+- Cold emails sent: **0 / 50** — blocked on Legal, not on marketing.
+- Discovery calls booked: **0 / 10** — downstream of emails.
+- Pilot datasets to Dev: **0 / 2** — downstream of calls.
+- Content live: **0 / 3** initial pieces published; **3 / 3** additional execution pieces drafted.
+
+**Critical path now runs through Legal.** If Legal slips past 2026-05-21, marketing's 2026-05-28 send deadline is at risk and the 2026-06-07 dataset deadline (Dev B2) almost certainly slips. Recommend CEO escalate Legal status at the next sync. Marketing has no further drafting work that meaningfully accelerates the cycle — the next bottleneck-relieving action is not ours.
 
 ---
 
@@ -56,13 +70,23 @@ This cycle, marketing exists to do exactly one thing: **deliver 10 qualified Nig
 
 ---
 
-## Content produced this cycle (3 pieces)
+## Content produced this cycle (6 pieces)
+
+**Initial draft set (2026-05-14):**
 
 1. **`blog_post_reconciliation_drag.md`** — long-form awareness piece. Cites concrete pain (hours/week, ₦ cost, unattributed receivables %), names the Nigerian-specific reasons international SaaS fails, ends with pilot CTA.
 2. **`linkedin_post_finance_lead.md`** — short-form social post hitting the same pain, optimised for Lagos finance professional engagement window.
 3. **`cold_outreach_pilot_email.md`** — 1:1 outbound template with subject-line A/B tests, personalisation slots, follow-up cadence, and a target-segment breakdown for the first 10 customers.
 
-All three end with the same call to action: **pilot recruitment**. We are not running parallel "newsletter signup" or "early access waitlist" CTAs this cycle — one funnel, one ask.
+**Mid-sprint additions (2026-05-16) — the execution layer:**
+
+4. **`discovery_call_script.md`** — 20-min structured interview guide for the 10 calls. Six core questions, two pricing-anchor questions (these are the inputs Finance needs to move tier prices off placeholder by 2026-06-04), pilot ask, referral capture. Plus post-call protocol so call notes accumulate into a structured dataset over the cycle.
+5. **`objection_handling_playbook.md`** — internal-facing FAQ. Top 8 objections (QuickBooks comparison, pricing, NDPR/data, "we already use X," time, decision-maker delegation, accuracy fears, longevity), recommended responses, and the reasoning so the founder can adapt rather than parrot.
+6. **`segment_outreach_variants.md`** — five segment-tailored email body variants for logistics, B2B services, wholesale, schools, healthcare. Replaces the body of the base cold email; subject lines and cadence unchanged.
+
+All six end with the same call to action: **pilot recruitment**. We are not running parallel "newsletter signup" or "early access waitlist" CTAs this cycle — one funnel, one ask.
+
+**Identified gap:** a forwardable one-page pilot summary the prospect can send to their CEO/MD/accountant (per objection #6 in the playbook). Deferred to next cycle so we don't fragment focus before the first call lands — but flagged here so it doesn't disappear.
 
 ---
 
@@ -89,7 +113,19 @@ All three end with the same call to action: **pilot recruitment**. We are not ru
 - [ ] 50 personalised cold emails sent to Nigerian SME finance leads by 2026-05-28.
 - [ ] 10 discovery calls booked by 2026-06-04.
 - [ ] At least 2 anonymised invoice+statement datasets handed to Dev by 2026-06-07 (resolves B2).
-- [ ] All three content pieces live (blog published, LinkedIn post posted, outreach template in active use).
+- [ ] All three initial content pieces live (blog published, LinkedIn post posted, outreach template in active use).
+- [x] Execution-layer pieces drafted (discovery script, objection playbook, segment variants) — added 2026-05-16.
 - [ ] Marketing memory updated with: what worked, what didn't, learnings from discovery calls.
 
 Anything beyond this list is out of scope for cycle 2026-05-14.
+
+---
+
+## Next-cycle pre-commitments (do not start before 2026-05-29)
+
+These are noted now so they're not forgotten, *not* to be worked this cycle:
+
+- Forwardable one-page pilot summary for prospects to send to their CEO/MD/accountant.
+- Refresh pricing language across all live copy once Finance/CEO commit tier prices.
+- Begin a public "pilot results" piece once Dev has run the matcher on ≥2 real datasets and we have hours-saved numbers.
+- Decide whether to invest in SEO for "invoice reconciliation Nigeria" — only if Nigeria-first holds at CEO sign-off.

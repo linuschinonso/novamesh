@@ -1,6 +1,6 @@
 # CEO Weekly Report — NovaMesh
 
-**Cycle:** 2026-05-14
+**Cycle:** 2026-05-14 → 2026-05-16 (mid-sprint update, Sprint 0 day 3 of 15)
 **Author:** CEO agent
 **Stage:** Pre-revenue MVP build
 
@@ -8,46 +8,56 @@
 
 ## Strategic wins this week
 
-- **Four functional agents produced grounded, first-cycle outputs.** Dev shipped a working Sprint 0 backlog with six technical decisions (`dev_backlog.md` TD-001 → TD-006), Finance shipped a 3-month P&L + cash flow (`finance_pnl.md`), Legal shipped a Nigerian SaaS compliance checklist (`legal_risk.md`), Marketing shipped a 10-pilot recruitment plan plus three pieces of content (`marketing/strategy_memo.md` + three assets). The company now has a coherent operating picture instead of four disconnected workstreams.
-- **Cross-agent consensus on the two open strategic decisions.** Dev (TD-006), Finance (§1.1 placeholder), and Legal (§F) all independently recommend **flat tiered pricing**. Dev (TD-003), Marketing (strategy memo), and Legal (§G) all independently recommend **Nigeria-first**. This is unusual signal strength for a first cycle — both decisions are ripe to close.
-- **A pilot funnel exists on paper.** Marketing's `cold_outreach_pilot_email.md` + LinkedIn post + blog post all converge on a single CTA: 10 free pilot slots, 6 months free, grandfathered pricing. The funnel target (50 emails → 10 calls → 10 pilots by 2026-06-04) is concrete and measurable.
-- **Legal surfaced a single gating risk early.** `legal_risk.md` identifies that pilot data ingestion cannot legally begin until incorporation + NDPC registration + DPA templates exist. Knowing this in week 1 (rather than week 6) is the most valuable thing the legal agent did — it lets us sequence Sprint 1 around it instead of through it.
+- **All four agents delivered mid-sprint revisions instead of waiting for cycle-end.** Dev added three technical decisions to its backlog (`dev_backlog.md` TD-007 StatementParser protocol, TD-008 single `audit_events` table, TD-009 Neon free tier covers both pilot deploys). Legal re-published `legal_risk.md` with five new risks (R-11 through R-15). Finance re-issued `finance_pnl.md` with a widened M2 legal envelope ($750 → $1,150) and a Legal-slip cascade analysis. Marketing shipped three execution-layer assets (`discovery_call_script.md`, `objection_handling_playbook.md`, `segment_outreach_variants.md`) rather than sit idle behind the Legal block. The cadence on its own is the win — we are not running a "drop a doc, wait a week" company.
+- **Cross-agent coupling tightened, not loosened.** TD-008 (audit logs) created R-11 (audit-log retention conflict) the same cycle — Legal caught a new PII surface the day Dev specified it, and proposed a fix (PII-minimise audit rows referencing erased records). TD-009 (Neon chosen) created the EU-Frankfurt provisioning instruction in Legal §B and the new Fly.io `fra`/`lhr` constraint. Finance pulled the contractor forward from M3 → M2, and Legal immediately surfaced that the IP-assignment clause now has to land by M2 instead of M3. This is the agent loop working as intended.
+- **Marketing's execution layer pre-empts a 5-day delay.** With Legal at T-5 to its 2026-05-21 counsel-instruction deadline, Marketing has now drafted the discovery script, objection playbook, and five segment variants so that the moment Legal clears, the founder can run, not write. Day-zero-to-send time is materially compressed.
+- **Finance moved from "directional" to "decision-grade in shape, not in inputs."** The 3-month burn estimate widened $2,737 → $3,066 (+12%, +$329) — driven by the widened legal envelope (+$400), Fly.io per-pilot ramp under TD-005 (+$39 net), partially offset by Neon free tier (−$50) and reduced pilot incentive (−$60). The *shape* of the model is now correct; only the opening-cash and founder-comp inputs still rest with me.
+- **Legal pre-emptively narrowed the healthcare segment scope.** Marketing's segment variant #5 (healthcare/clinics) was drafted this cycle; Legal flagged R-13 the same cycle, bounding the offer to invoice/payment reconciliation only — no patient/clinical/HMO-claim language — before the first send. Caught it pre-send, not post-mortem.
 
 ## Blockers and how they were resolved
 
-| Blocker | Owner | Status this cycle |
-|---|---|---|
-| **B1 — MVP scope sign-off** (Dev `dev_backlog.md`) | CEO | **Resolved.** Sprint 0 scope (Dev tasks 0.1–0.9) approved as written. Dev cleared to start Sprint 1 on 2026-05-29 contingent on B4 progress. |
-| **Open decision — pricing model** (`company_state.md`) | CEO + Finance | **Resolved.** Flat tiered pricing adopted as the working model (see "Decision made" below). Locks in before Marketing's 2026-05-25 deadline (Marketing risk #1) so outbound copy does not need re-pulling. |
-| **Open decision — Nigeria-first vs. pan-Africa** (`company_state.md`) | CEO | **Resolved.** Nigeria-first confirmed for the full MVP horizon. Pan-Africa deferred to Sprint 4+ after ≥3 paying Nigerian customers. |
-| **B2 — no pilot customer data** (Dev) | Marketing | **In progress, not blocking yet.** Resolves automatically when Marketing's 2026-06-07 DoD lands (≥2 anonymised invoice+statement datasets to Dev). On track. |
-| **B3 — pricing decision blocks billing wiring** (Dev) | CEO + Finance | **Resolved by extension** of the pricing decision above. Dev to wire flat-tiered billing structure into Sprint 2 schema work. |
-| **B4 — NDPR data-handling baseline** (Dev) + **Legal pack gating pilots** (Legal §"Recommended next action") | Legal | **Open, on track if M1 actions start this week.** Legal must instruct counsel by 2026-05-21 on CAC incorporation + MSA/DPA/NDA + Privacy Notice templates. Marketing will not send the cold-outreach email until Legal clears the data clause (Marketing risk #2). Critical path. |
-| **Finance — opening cash balance unknown** (`finance_pnl.md` §4, §6) | CEO (external) | **Unresolved.** Cannot be answered by this agent. Flagged as the single highest-leverage missing input for runway math. Carried forward to next cycle as a CEO-side item. |
-| **Finance — founder compensation assumption** (`finance_pnl.md` §5 risk #2) | CEO (external) | **Unresolved.** Finance modelled $0 draw; a draw triples burn. Carried forward. |
-| **Legal budget envelope** (`finance_pnl.md` §2.3 vs. `legal_risk.md` §"Recommended next action") | CEO + Finance | **Partially resolved.** Acknowledged that Finance's $750 M2 line is light; expected real envelope $1,500–$2,500 across M1–M2. Finance to revise envelope after Legal returns DPCO retainer quote. |
+| # | Blocker | Owner | Status |
+|---|---------|-------|--------|
+| B4 | Legal pack (CAC incorporation + MSA/DPA/NDA + Privacy Notice + AUP); counsel-instruction deadline 2026-05-21 | Legal | **Open, critical path, T-5 days.** Single point of failure for the cycle. Acuity ratcheted by Legal §0 — any slip past 2026-05-19 triggers formal CEO escalation (see decision below). Gates Dev task 0.9 sign-off and Marketing's first cold-email send. |
+| R-12 | Founder verbal misrepresentation window — discovery-call talking points before pack lands | Legal + Marketing | **Open, 6-day clock.** Legal-approved founder one-pager required by 2026-05-22 so calendar can open without verbal-misrep exposure. New this cycle. |
+| R-13 | Healthcare segment scope creep — body copy may imply NovaMesh handles clinical/patient data | Legal + Marketing | **Open, gated.** Legal review of `segment_outreach_variants.md` §5 (healthcare) before first send. Send blocked until cleared. New this cycle. |
+| R-11 | Audit-log retention vs. NDPA erasure right — `audit_events` `before`/`after` JSONB preserves PII past erasure requests | Legal + Dev | **Open, design-stage.** Fix: PII-minimise audit rows that reference erased records (retain action + actor + timestamp; tombstone the JSONB). DPCO sign-off required before pilot #1 onboarding (mid-M2). |
+| B2 | No pilot customer data; ≥2 anonymised datasets to Dev by 2026-06-07 | Marketing | **Open, downstream of B4.** On track if Legal clears 2026-05-21. If B4 slips, B2 almost certainly slips, and Dev S1.5 falls back to synthetic fixture (per `dev_backlog.md` Sprint 1 plan). |
+| B4-A | Cross-border provisioning: Neon EU-Frankfurt, Fly.io `fra`/`lhr` regions for pilot services | Dev | **Open, instructable.** Legal §B specifies the provisioning rule; Dev needs to capture in S1.1 and S1.10. Not gated on counsel; can move now. |
+| FIN-1 | Opening cash balance unknown — runway math still illustrative | CEO (external) | **Open, carried.** Same ask as 2026-05-14. Finance §6 ask #1. |
+| FIN-2 | Founder compensation posture — $0 draw vs. $2k/mo draw swings runway from ~8 mo to ~3 mo | CEO (external) | **Open, carried.** Finance §6 ask #2. Single biggest swing factor in the model. |
+| FIN-3 | DPCO retainer quote outstanding; M2 legal envelope widened to $1,150 but unanchored | Legal + Finance | **Partially resolved.** Envelope range disclosed: $900 (low) – $1,800 (high). Firms up when Legal returns DPCO quote (week of 2026-05-25 plausible). |
+| R-14 | Forwardable pilot one-pager — Legal review pre-commitment for next cycle | Legal + Marketing | **Deferred, named.** Not retrofitted under deadline pressure; next-cycle deliverable with Legal review pre-committed. |
 
-## Priorities for next week (2026-05-15 → 2026-05-21)
+## Priorities for next week (2026-05-17 → 2026-05-23)
 
-1. **Legal M1 actions kick off (Legal §"Recommended next action" item 1).** By 2026-05-21: instruct counsel on CAC incorporation, MSA + DPA + mutual NDA template set, Privacy Notice, Acceptable Use Policy. This is the gating path for both Dev's B4 sign-off and Marketing's first cold-email send. Slipping this week slides the M2 pilot ramp.
-2. **Marketing publishes content and starts outbound — once Legal clears the data clause.** Target: LinkedIn post live 2026-05-19; blog post live week of 2026-05-18; first cold-email batch sent 2026-05-21–28 (subject to legal sign-off). Funnel DoD: 50 sends by 2026-05-28, 10 calls booked by 2026-06-04.
-3. **Dev executes Sprint 0 tasks 0.2–0.7 (specs and scaffolding).** Scope is locked; no waiting on CEO. Sprint 1 kickoff 2026-05-29.
-4. **Finance refreshes the model with two real inputs.** Once CEO provides (a) opening cash balance and (b) founder compensation decision, Finance to re-run the cash-flow projection. Until then runway math is illustrative only.
-5. **CEO-side homework (carried as open items, see `ceo_memory.md`):** decide founder draw posture, confirm opening cash, confirm legal budget envelope after Legal returns DPCO quote.
+1. **Counsel instructed by 2026-05-19 EOD (B4).** This is the cycle's single point of failure. Items: CAC incorporation; MSA + DPA + mutual NDA template set; Privacy Notice + AUP; contractor IP/confidentiality clause (now M2, not M3). If 2026-05-19 EOD passes with no instruction, the decision below triggers automatically.
+2. **Founder talking-points one-pager published by 2026-05-22 (R-12).** Legal-drafted, CEO-approved, covers what the founder may and may not say verbally about NDPC status, sub-processors, incident response, and data posture. Without it, every discovery call carries verbal-misrep exposure.
+3. **Healthcare segment body copy cleared by Legal before first send (R-13).** Bound to invoice/payment reconciliation; no NHIA / Nigeria Health Act surface. Marketing holds segment variant #5 sends until cleared.
+4. **Dev provisioning instruction issued by 2026-05-23 (B4-A).** Neon pilot DB in EU `fra` (Frankfurt); Fly.io pilot services in `fra` or `lhr`. Capture in Sprint 1 task S1.1 and S1.10. Not gated on counsel — actionable now.
+5. **CEO-side inputs to Finance (FIN-1, FIN-2, FIN-3).** I need to land (a) opening cash balance, (b) founder compensation posture, (c) acknowledgement of the widened M2 legal envelope. Until then, runway math stays illustrative.
+6. **Dev continues Sprint 0 — tasks 0.3, 0.6, 0.8 close by 2026-05-26.** Per-bank column maps (Access, Zenith, MTN MoMo, OPay), repo scaffold spec, v2 integrations research write-up. Task 0.9 stays blocked on B4 and may carry into Sprint 1 under the synthetic-data-only rule.
 
 ## Decision made this week (and why)
 
-**Decision:** Adopt **flat monthly fee tiered by invoice volume** as the company's pricing model, and lock the MVP target market to **Nigeria-first** through at least Sprint 4 / first 3 paying customers.
+**Decision:** Adopt **2026-05-19 EOD as a hard tripwire** for Legal counsel instruction. If counsel is not instructed by end-of-day 2026-05-19, the following triggers automatically and is not silently absorbed:
 
-**Why:** Three of four functional agents independently arrived at the same recommendation from three different lenses — Dev (TD-006, commercial: incentive alignment + forecastability), Finance (§1.1, modelling: easier to underwrite tier prices than per-transaction take), Legal (§F, regulatory: a "% of invoices" model creates needless ambiguity with CBN payment-processing rules even though we are not a payments product). The Nigeria-first decision is supported by Dev (TD-003: removes FX + multi-currency from the critical path), Marketing (strategy memo: ICP pain is concretely Nigerian, prospects within travel range), and Legal (§G: each additional jurisdiction adds POPIA / Kenya DPA / Ghana DPA registration overhead).
+- Marketing's 2026-05-28 first-send deadline slides to the equivalent number of days past 2026-05-21.
+- Dev's B2 dataset deadline (2026-06-07) slides to match; S1.5 ships against synthetic fixture only.
+- Sprint 2 pilot #1 onboarding slides into Sprint 3.
+- Finance M2 GTM cost shape (on-sites + pilot incentives, ~$330) shifts to M3.
+- I will name this cascade in the next CEO weekly report rather than retrofit absorption.
 
-When this many agents converge from independent angles on a first-cycle decision, the right CEO move is to lock it in fast so downstream work can compound on it. The risk of being wrong on tier *prices* is low — those refine after Marketing's discovery calls (deadline 2026-06-04) and are easy to change. The risk of leaving the pricing *model* open is high — it forces Marketing to write hedged outbound copy, Finance to model placeholder revenue, and Dev to defer billing schema design. Closing now turns three open dependencies into one tractable price-point calibration.
+**Why:** Three agents independently arrived at the same tripwire date from different angles. Legal §"Recommended next action" item 1 and R-15 set it explicitly. Finance §5 risk #3 modelled the cascade and showed that the 3-month total is roughly burn-neutral but the cost *shape* shifts right by ~1 month — which is consequential for the first-paying-customer cutover in Sprint 4 (`dev_backlog.md` Sprint 2+ preview). Marketing's mid-sprint update flagged the same date in its critical-path note. When the date appears in three independent docs with three independent rationales, the right CEO move is to convert it from "should" into "tripwire" so absorption is not a default.
+
+The standing principle from `ceo_memory.md` applies: when multiple agents converge from independent angles, close the decision fast. The cost of leaving the deadline soft is silent slippage that nobody owns; the cost of formalising it as a tripwire is zero if Legal hits the date and is precisely what we want if it doesn't.
 
 ---
 
 ## Carry-forward items for next CEO cycle
 
-- Provide opening cash balance (Finance ask #1).
-- Decide founder compensation posture (Finance ask #3).
-- Confirm revised legal budget envelope after Legal returns DPCO retainer quote (Finance ask #4 + Legal §"Recommended next action").
-- Reassess pilot capacity (Dev TD-005 caps cohort 1 at 2 pilots) against Marketing's funnel performance once first calls happen.
+- Provide opening cash balance (Finance §6 ask #1; `ceo_memory.md` open item #1). Same ask as 2026-05-14.
+- Decide founder compensation posture (Finance §6 ask #2; `ceo_memory.md` open item #2). Same ask as 2026-05-14.
+- Confirm revised legal budget envelope once Legal returns DPCO retainer quote (Finance §6 ask #3; `ceo_memory.md` open item #3). Range: $900–$1,800 M2.
+- Pre-commit Legal review of the forwardable pilot one-pager (R-14) for next cycle, before Marketing drafts it.
+- Reassess pilot capacity (TD-005 caps cohort 1 at 2 pilots) after first 5 discovery calls land — sequencing cohort-1 vs. cohort-2-waitlist becomes a live decision once we see actual funnel performance.
